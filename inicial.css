@@ -30,37 +30,47 @@ main {
     background: rgba(0, 0, 0, 0.034);
 }
 
-/* Logo */
-.logo-link {
+
+
+.logo-animado {
+    position: relative; 
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
+    color: white;
+    transition: all 0.4s ease-out;
 }
 
-/* O container da logo */
-.logo {
-    position: relative;
-    width: 40px; 
-    height: 40px; 
-    cursor: pointer;
+/* O ícone da logo (a imagem) */
+.logo-animado .logo-icone {
+    height: 40px;
+    width: auto;
+    /* Adicionamos a transição para a transformação */
+    transition: transform 0.4s ease-out;
 }
 
-/* Estilo comum para AMBAS as imagens da logo */
-.logo img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* A imagem de hover começa transparente e tem a transição suave */
-.logo .logo-hover {
+/* O texto "accenture" */
+.logo-animado .logo-texto {
+    font-size: 27px;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+    transform: translateY(15px); /* Começa 15px para baixo */
+    
+    /* A transição agora inclui a transformação (movimento) */
+    transition: opacity 0.3s ease-out, transform 0.4s ease-out;
 }
 
-/* Quando o mouse passa sobre a div .logo, a imagem de hover fica visível */
-.logo:hover .logo-hover {
+/* Efeito HOVER no container principal */
+.logo-animado:hover .logo-icone {
+    transform: translateX(100px) translateY(-19px) scale(0.5);
+
+}
+.logo-animado:hover .logo-texto {
+    /* O texto aparece e sobe para sua posição original */
     opacity: 1;
+    transform: translateY(0);
+    margin-left: 5px; 
+    /* Cria um pequeno espaço para não colar no ícone */
 }
 
 
@@ -131,11 +141,15 @@ main {
 }
 
 
+/* ========================================= */
+/* SEÇÃO DOS CARDS COM IMAGEM (VERSÃO CORRIGIDA) */
+/* ========================================= */
+
 .info-boxes {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 20rem; /* Espaçamento aumentado */
     padding: 4rem 2rem;
     width: 100%;
     max-width: 1200px;
@@ -143,19 +157,13 @@ main {
 }
 
 .box {
-    flex: 1 1 px; /* Base um pouco maior para a imagem */
-    
-    /* Estilos visuais do Card */
+    flex: 1 1 px; 
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    
-    /* Essencial para a imagem se ajustar aos cantos arredondados */
-    overflow: hidden; 
-    
+    overflow: hidden; /* <<< ESSENCIAL: Garante que nada vaze para fora do card */
     display: flex;
-    flex-direction: column; /* Organiza a imagem e o conteúdo em coluna */
-    
+    flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -164,21 +172,18 @@ main {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-
+/* Estilo da Imagem dentro do Card */
 .box img {
     width: 100%;
-    /* Garante que todas as imagens tenham a mesma proporção (4:3) */
-    aspect-ratio: 4 / 3; 
-    object-fit: cover; /* Evita que a imagem fique distorcida */
+    aspect-ratio:  0 / 9 ; /* Imagem em formato retrato */
+    object-fit: cover; /* <<< ESSENCIAL: Evita que a imagem fique distorcida */
     display: block;
 }
 
 /* Container para o conteúdo abaixo da imagem */
 .card-content {
-    padding: 1rem 1.5rem;
-    margin-top: auto; /* Truque para empurrar o conteúdo para baixo se o card crescer */
-    height: 600;
-    /* Alinha o link 'saiba mais' à direita */
+    padding: 1.5rem; /* Aumentei um pouco o padding para dar mais espaço */
+    margin-top: auto; /* <<< ESSENCIAL: Empurra o link para o fundo do card */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -186,7 +191,7 @@ main {
 
 /* Estilo do link 'saiba mais' */
 .card-content a {
-    color: #a78bfa; /* Um roxo um pouco mais claro para o link */
+    color: #a78bfa; 
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -196,3 +201,34 @@ main {
     color: #c4b5fd;
 }
 
+.video-section {
+    padding: 4rem 2rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o título */
+    width: 100%;
+    max-width: 1000px; /* Limita a largura máxima do vídeo */
+    margin: 0 auto; /* Centraliza a seção na página */
+}
+
+.video-section h2 {
+    color: white;
+    font-size: clamp(1.8rem, 3vw, 2.5rem); /* Título responsivo */
+    margin-bottom: 2rem;
+}
+
+/* Container responsivo para o vídeo */
+.video-responsive {
+    position: relative; /* Essencial para o posicionamento do iframe */
+    padding-bottom: 56.25%; /* Isso define a proporção 16:9 (9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden; /* Garante que nada vaze */
+    border-radius: 8px; /* Arredonda as bordas do vídeo */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.video-responsive iframe {
+    position: absolute; /* Posiciona o iframe para preencher o container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Preenche 100% da largura */
+    height: 100%; /* Preenche 100% da altura */
+}
