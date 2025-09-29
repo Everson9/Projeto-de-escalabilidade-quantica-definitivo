@@ -31,11 +31,39 @@ main {
 }
 
 /* Logo */
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #8b5cf6;
+.logo-link {
+    text-decoration: none;
 }
+
+/* O container da logo */
+.logo {
+    position: relative;
+    width: 40px; 
+    height: 40px; 
+    cursor: pointer;
+}
+
+/* Estilo comum para AMBAS as imagens da logo */
+.logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* A imagem de hover começa transparente e tem a transição suave */
+.logo .logo-hover {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Quando o mouse passa sobre a div .logo, a imagem de hover fica visível */
+.logo:hover .logo-hover {
+    opacity: 1;
+}
+
+
 
 /* Navegação (link) */
 .nav-link {
@@ -44,12 +72,12 @@ main {
     font-size: 16px;
     padding: 8px 15px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
     transition: background 0.3s ease;
+    
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+    color:  purple;
 }
 
 
@@ -79,14 +107,28 @@ main {
 /* Regras da cascata para telas PEQUENAS (ajuste responsivo) */
 @media (max-width: 768px) {
     .main-title .line-2 {
-        margin-left: 10vw; 
+        margin-left: 12vw;
+          white-space: nowrap;
     }
 
     .main-title .line-3 {
-        margin-left: 20vw; 
+        margin-left: 22vw;
+        white-space: nowrap;
     }
 }
 
+/* Para telas de celulares (até 480px de largura) */
+@media (max-width: 480px) {
+    .main-title .line-2 {
+        margin-left: 10vw; 
+          white-space: nowrap;
+    }
+
+    .main-title .line-3 {
+        margin-left: 18vw; 
+          white-space: nowrap;
+    }
+}
 
 
 .info-boxes {
@@ -134,7 +176,7 @@ main {
 /* Container para o conteúdo abaixo da imagem */
 .card-content {
     padding: 1rem 1.5rem;
-    /margin-top: auto; /* Truque para empurrar o conteúdo para baixo se o card crescer */
+    margin-top: auto; /* Truque para empurrar o conteúdo para baixo se o card crescer */
     height: 600;
     /* Alinha o link 'saiba mais' à direita */
     display: flex;
@@ -153,3 +195,4 @@ main {
 .card-content a:hover {
     color: #c4b5fd;
 }
+
