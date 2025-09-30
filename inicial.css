@@ -9,7 +9,7 @@ body {
     font-family: 'Inter', sans-serif;
     background: #121212;
     color: white;
-    min-height: 100vh; /* <-- ALTERADO */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -30,8 +30,7 @@ main {
     background: rgba(0, 0, 0, 0.034);
 }
 
-
-
+/* ... (Todo o seu código da logo e do título principal permanece o mesmo) ... */
 .logo-animado {
     position: relative; 
     display: inline-flex;
@@ -40,42 +39,26 @@ main {
     color: white;
     transition: all 0.4s ease-out;
 }
-
-/* O ícone da logo (a imagem) */
 .logo-animado .logo-icone {
     height: 40px;
     width: auto;
-    /* Adicionamos a transição para a transformação */
     transition: transform 0.4s ease-out;
 }
-
-/* O texto "accenture" */
 .logo-animado .logo-texto {
     font-size: 27px;
     opacity: 0;
     white-space: nowrap;
-    transform: translateY(15px); /* Começa 15px para baixo */
-    
-    /* A transição agora inclui a transformação (movimento) */
+    transform: translateY(15px);
     transition: opacity 0.3s ease-out, transform 0.4s ease-out;
 }
-
-/* Efeito HOVER no container principal */
 .logo-animado:hover .logo-icone {
     transform: translateX(100px) translateY(-19px) scale(0.5);
-
 }
 .logo-animado:hover .logo-texto {
-    /* O texto aparece e sobe para sua posição original */
     opacity: 1;
     transform: translateY(0);
     margin-left: 5px; 
-    /* Cria um pequeno espaço para não colar no ícone */
 }
-
-
-
-/* Navegação (link) */
 .nav-link {
     color: white;
     text-decoration: none;
@@ -83,16 +66,11 @@ main {
     padding: 8px 15px;
     border-radius: 20px;
     transition: background 0.3s ease;
-    
 }
-
 .nav-link:hover {
     color:  purple;
 }
-
-
 .main-title {
-    /* O valor máximo (terceiro) foi aumentado para telas grandes */
     font-size: clamp(2.5rem, 8vw, 4.3rem); 
     font-weight: bold;
     line-height: 0.6;
@@ -104,64 +82,40 @@ main {
     max-width: 1200px;
 }
 
-/* Regras da cascata para telas GRANDES (padrão) */
+
 .main-title .line-2 {
-    margin-left: 10vw;
+    /* Mínimo de 3rem, ideal de 10vw, máximo de 150px */
+    margin-left: clamp(3rem, 10vw, 150px);
+    white-space: nowrap; /* Mantém em uma só linha */
 }
 
 .main-title .line-3 {
-    margin-left: 20vw;
+    /* Mínimo de 5rem, ideal de 20vw, máximo de 300px */
+    margin-left: clamp(5rem, 20vw, 300px);
+    white-space: nowrap; /* Mantém em uma só linha */
 }
 
 
-/* Regras da cascata para telas PEQUENAS (ajuste responsivo) */
-@media (max-width: 768px) {
-    .main-title .line-2 {
-        margin-left: 12vw;
-          white-space: nowrap;
-    }
 
-    .main-title .line-3 {
-        margin-left: 22vw;
-        white-space: nowrap;
-    }
-}
-
-/* Para telas de celulares (até 480px de largura) */
-@media (max-width: 480px) {
-    .main-title .line-2 {
-        margin-left: 10vw; 
-          white-space: nowrap;
-    }
-
-    .main-title .line-3 {
-        margin-left: 18vw; 
-          white-space: nowrap;
-    }
-}
-
-
-/* ========================================= */
-/* SEÇÃO DOS CARDS COM IMAGEM (VERSÃO CORRIGIDA) */
-/* ========================================= */
 
 .info-boxes {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20rem; /* Espaçamento aumentado */
-    padding: 4rem 2rem;
+    gap: 20rem; 
+    padding-bottom: 2rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .box {
-    flex: 1 1 px; 
+    position: relative;
+    flex: 1 1 300px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    overflow: hidden; /* <<< ESSENCIAL: Garante que nada vaze para fora do card */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -175,60 +129,124 @@ main {
 /* Estilo da Imagem dentro do Card */
 .box img {
     width: 100%;
-    aspect-ratio:  0 / 9 ; /* Imagem em formato retrato */
-    object-fit: cover; /* <<< ESSENCIAL: Evita que a imagem fique distorcida */
+    aspect-ratio: 0 / 8 ;
+    object-fit: cover;
     display: block;
+    transition: filter 0.4s ease-in-out;
 }
 
-/* Container para o conteúdo abaixo da imagem */
-.card-content {
-    padding: 1.5rem; /* Aumentei um pouco o padding para dar mais espaço */
-    margin-top: auto; /* <<< ESSENCIAL: Empurra o link para o fundo do card */
+/* ========================================= */
+/* CÓDIGO DO OVERLAY COM LINK ATIVO         */
+/* ========================================= */
+
+/* A camada de sobreposição */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.85);
+    
+    /* ALTERADO: Agora é uma coluna, e joga o conteúdo para cima e para baixo */
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center; /* Centraliza horizontalmente o texto e o link */
+    padding: 1rem; /* Espaçamento interno geral */
+
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* O texto dentro da camada */
+.overlay-text {
+    text-align: center;
+    padding: 1rem 0; /* Ajustado padding */
+    color: white;
+}
+.overlay-text h3 {
+    margin-bottom: 0.8rem; /* Ajustado para um pouco menos de margem */
+    font-size: 1.6rem; /* Aumentado um pouco o título */
+    color: #a78bfa;
+}
+.overlay-text p {
+    font-size: 0.95rem; /* Aumentado um pouco o texto */
+    line-height: 1.6;
+}
+
+/* O link 'saiba mais' agora está aqui */
+.card-content {
+    /* REMOVIDO: margin-top: auto; (não é mais necessário) */
+    display: flex;
+    justify-content: center; /* Centraliza o botão */
     align-items: center;
+    width: 100%; /* Ocupa toda a largura para centralizar bem */
+    padding: 0 1rem 1rem 1rem; /* Padding para a parte inferior */
 }
 
 /* Estilo do link 'saiba mais' */
 .card-content a {
-    color: #a78bfa; 
+    color: white; /* Cor do texto do link (branco para contrastar) */
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 1.1rem; /* AUMENTADO: A fonte do link 'saiba mais' */
+    background-color: #a78bfa; /* Cor de fundo da "caixa" roxa */
+    padding: 0.7rem 1.5rem; /* Padding para criar a "caixa" */
+    border-radius: 25px; /* Bordas arredondadas */
+    display: flex; /* Para alinhar o texto e a seta */
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .card-content a:hover {
-    color: #c4b5fd;
+    background-color: #c4b5fd; /* Cor mais clara no hover */
+    transform: scale(1.05); /* Pequena escala no hover para interatividade */
 }
 
+/* Estilo da seta (>) */
+.card-content .arrow-icon {
+    margin-left: 8px; /* Espaço entre o texto e a seta */
+    font-size: 1.2rem; /* Tamanho da seta */
+    line-height: 1; /* Alinhamento vertical */
+    color: white; /* Cor da seta */
+}
+
+/* EFEITO HOVER: O que acontece ao passar o mouse */
+.box:hover img {
+    filter: brightness(50%);
+}
+.box:hover .card-overlay {
+    opacity: 1;
+}
+
+/* ========================================= */
+/* SEÇÃO DO VÍDEO EXPLICATIVO (SEM MUDANÇAS) */
+/* ========================================= */
 .video-section {
-    padding: 4rem 2rem; /* Espaçamento interno */
-    text-align: center; /* Centraliza o título */
-    width: 100%;
-    max-width: 1000px; /* Limita a largura máxima do vídeo */
-    margin: 0 auto; /* Centraliza a seção na página */
+   padding: 2rem 2rem 4rem 2rem; 
+   text-align: center;
+   width: 100%;
+   max-width: 1000px;
+   margin: 0 auto;
 }
-
 .video-section h2 {
     color: white;
-    font-size: clamp(1.8rem, 3vw, 2.5rem); /* Título responsivo */
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     margin-bottom: 2rem;
 }
-
-/* Container responsivo para o vídeo */
 .video-responsive {
-    position: relative; /* Essencial para o posicionamento do iframe */
-    padding-bottom: 56.25%; /* Isso define a proporção 16:9 (9/16 = 0.5625) */
+    position: relative;
+    padding-bottom: 56.25%;
     height: 0;
-    overflow: hidden; /* Garante que nada vaze */
-    border-radius: 8px; /* Arredonda as bordas do vídeo */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
 .video-responsive iframe {
-    position: absolute; /* Posiciona o iframe para preencher o container */
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Preenche 100% da largura */
-    height: 100%; /* Preenche 100% da altura */
+    width: 100%;
+    height: 100%;
 }
