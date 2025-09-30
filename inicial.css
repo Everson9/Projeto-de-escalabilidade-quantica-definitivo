@@ -55,7 +55,7 @@ main {
     align-items: center;
     padding: 20px 40px;
     background: rgba(0, 0, 0, 0.034);
-    /* position e z-index removidos daqui */
+    width: 500px;
 }
 
 /* ... (O resto do seu CSS da logo, título e cards permanece o mesmo) ... */
@@ -234,4 +234,75 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
+}
+/* botoes */
+
+.comparison-section-bg {
+    width: 100%;
+    padding: 6rem 0; /* Espaçamento vertical */
+
+    /* A MÁGICA ACONTECE AQUI: */
+    /* 1. Uma camada escura semi-transparente (overlay) */
+    /* 2. A sua imagem de fundo, separada por vírgula */
+    background-image: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('');
+    
+    background-size: cover; /* Garante que a imagem cubra a seção inteira */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: scroll; /* A imagem rola junto com a página (mude para 'fixed' se quiser que fique parada) */
+}
+
+/* O container do conteúdo, que fica centralizado */
+.comparison-content {
+    width: 100%;
+    max-width: 1200px; /* Limita a largura do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo na horizontal */
+    padding: 0 2rem; /* Espaçamento lateral para telas menores */
+    text-align: center;
+}
+
+.comparison-content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 4rem; /* Espaço entre o título da seção e os botões */
+    color: white; /* Garante que o título seja branco */
+}
+
+
+/* AS REGRAS PARA .spheres-container e .sphere-button CONTINUAM AS MESMAS DE ANTES */
+
+.spheres-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.sphere-button {
+    /* Tamanho da esfera */
+    width: 220px;
+    height: 220px;
+
+    /* Estilo visual */
+    background-color: #8b5cf6; /* Cor roxa do seu tema */
+    border-radius: 50%; /* A mágica para criar o círculo perfeito */
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem; /* Espaçamento interno para o texto não colar nas bordas */
+    
+    /* Centralização perfeita do texto dentro da esfera */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Efeito de transição suave */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.sphere-button:hover {
+    background-color: #a78bfa; /* Cor fica mais clara */
+    transform: scale(1.05) translateY(-5px); /* Efeito de 'crescer' e 'levantar' */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
 }
