@@ -241,11 +241,6 @@ main {
     width: 100%;
     padding: 6rem 0; /* Espaçamento vertical */
 
-    /* A MÁGICA ACONTECE AQUI: */
-    /* 1. Uma camada escura semi-transparente (overlay) */
-    /* 2. A sua imagem de fundo, separada por vírgula */
-    background-image: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('');
-    
     background-size: cover; /* Garante que a imagem cubra a seção inteira */
     background-position: center; /* Centraliza a imagem */
     background-attachment: scroll; /* A imagem rola junto com a página (mude para 'fixed' se quiser que fique parada) */
