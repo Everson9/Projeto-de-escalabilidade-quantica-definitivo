@@ -1,0 +1,83 @@
+
+        body {
+            background-color: #030105;
+            font-family: 'Josefin Sans', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-decoration: none;
+        }
+
+        .fundamentos-matemáticos {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .formula_1 {
+            width: 240px; 
+            height: 380px; 
+            background-color: #7703BA96;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+
+        .formula_1 h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .formula_1 img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .formula_1 p {
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+
+        .button {
+            background-color: #030105C2;
+            border: none;
+            padding: 10px;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            height: 60px;
+            margin-top: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #ffffffc2;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }

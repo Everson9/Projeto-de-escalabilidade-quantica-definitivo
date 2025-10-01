@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixeiro Viajante</title>
+    <link rel="stylesheet" href="caixeiro.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <h1>Problema do Caixeiro Viajante (TSP)</h1>
+
+    <div class="card">
+        <div class="icon">
+            <img src="imgs_icones/CaixeiroViajante_icone2.png" alt="Ícone de um mapa com um pino de localização"> 
+        </div>
+        
+        <div class="text">
+            <p>O Problema do Caixeiro Viajante busca encontrar a menor rota que visita todas as cidades exatamente uma vez, retornando à cidade inicial no final.</p>
+        </div>
+    </div>
+
+    <div class="objetivo">
+        <h3>Função Objetivo:</h3>
+        <div class="miniquadrado">
+            <p>min ∑(i,j) d<sub>ij</sub> * x<sub>ij</sub></p>
+        </div>
+
+        <p>Onde  dij é a distância entre cidades i e j, exige 1 se aresta (i,j) estã na rota, O caso contrário</p>
+
+    <div class="restricoes">
+        <h3>Restrições:</h3>
+        <div class="restricao">
+            <p>∑<sub>i</sub> x<sub>ij</sub> = 1, ∀i (cada cidade é visitada exatamente uma vez)</p>
+        </div>
+        <div class="restricao">
+            <p>∑<sub>i</sub> x<sub>ij</sub> = 1, ∀j (cada cidade é deixada exatamente uma vez)</p>
+        </div>
+        <div class="restricao">
+            <p>∑<sub>(i,j) ∈ S</sub> x<sub>ij</sub> ≤ |S| - 1, ∀S ⊂ V, |S| ≥ 2 (eliminação de subciclos)</p>
+        </div>
+    </div>
+
+        
+
+
+    </div>
+    
+</body>
+</html>
