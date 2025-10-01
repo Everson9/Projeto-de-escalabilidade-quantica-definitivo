@@ -4,20 +4,19 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Inter', sans-serif;
     color: white;
     min-height: 100vh;
     
-    /* PONTO-CHAVE 1: A imagem de fundo */
-    background-image: url('imagens/WhatsApp\ Image\ 2025-09-18\ at\ 12.30.07\ 2.png');
-    background-size: cover; /* Garante que a imagem cubra toda a tela sem distorcer */
-    background-position: center center; /* Centraliza a imagem */
-    background-attachment: fixed; /* ESSENCIAL: Mantém a imagem fixa durante a rolagem */
+    /* Fundo de imagem único e fixo para toda a página */
+    background-image: url('imagens/WhatsApp Image 2025-09-18 at 12.30.07 2.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
-/* PONTO-CHAVE 2: O overlay escuro para legibilidade */
+/* Overlay escuro sobre a imagem de fundo */
 body::before {
     content: '';
     position: fixed;
@@ -25,14 +24,14 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(18, 18, 18, 0.7); /* Camada escura semi-transparente */
-    z-index: -1; /* Coloca o overlay entre o fundo e o conteúdo */
+    background-color: rgba(18, 18, 18, 0.7);
+    z-index: -1;
 }
 
-/* O wrapper do conteúdo continua sendo importante */
+/* Container para todo o conteúdo, garantindo que fique na frente do fundo */
 .content-wrapper {
     position: relative;
-    z-index: 1; /* Garante que o conteúdo fique na frente do overlay */
+    z-index: 1;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -46,7 +45,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* position e z-index removidos daqui */
+    width: 100%;
 }
 
 .header {
@@ -55,10 +54,8 @@ main {
     align-items: center;
     padding: 20px 40px;
     background: rgba(0, 0, 0, 0.034);
-    width: 500px;
 }
 
-/* ... (O resto do seu CSS da logo, título e cards permanece o mesmo) ... */
 .logo-animado {
     position: relative; 
     display: inline-flex;
@@ -112,7 +109,7 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 18rem; 
+    gap: 4rem;
     padding-bottom: 2rem;
     width: 100%;
     max-width: 1200px;
@@ -136,13 +133,12 @@ main {
 }
 .box img {
     width: 100%;
-    aspect-ratio: 0 / 9 ; /* CORRIGIDO: formato retrato */
+    aspect-ratio: 3 / 4;
     object-fit: cover;
     display: block;
     transition: filter 0.4s ease-in-out;
 }
 
-/* ... (Todo o resto do seu CSS dos cards e do vídeo do YouTube está correto e permanece aqui) ... */
 .card-overlay {
     position: absolute;
     top: 0;
@@ -195,12 +191,6 @@ main {
     background-color: #c4b5fd;
     transform: scale(1.05);
 }
-.card-content .arrow-icon {
-    margin-left: 8px;
-    font-size: 1.2rem;
-    line-height: 1;
-    color: white;
-}
 .box:hover img {
     filter: brightness(50%);
 }
@@ -235,34 +225,19 @@ main {
     width: 100%;
     height: 100%;
 }
-/* botoes */
 
-.comparison-section-bg {
+.comparison-section {
     width: 100%;
-    padding: 6rem 0; /* Espaçamento vertical */
-
-    background-size: cover; /* Garante que a imagem cubra a seção inteira */
-    background-position: center; /* Centraliza a imagem */
-    background-attachment: scroll; /* A imagem rola junto com a página (mude para 'fixed' se quiser que fique parada) */
-}
-
-/* O container do conteúdo, que fica centralizado */
-.comparison-content {
-    width: 100%;
-    max-width: 1200px; /* Limita a largura do conteúdo */
-    margin: 0 auto; /* Centraliza o conteúdo na horizontal */
-    padding: 0 2rem; /* Espaçamento lateral para telas menores */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
     text-align: center;
 }
-
-.comparison-content h2 {
+.comparison-section h2 {
     font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 4rem; /* Espaço entre o título da seção e os botões */
-    color: white; /* Garante que o título seja branco */
+    margin-bottom: 4rem;
+    color: white;
 }
-
-
-/* AS REGRAS PARA .spheres-container e .sphere-button CONTINUAM AS MESMAS DE ANTES */
 
 .spheres-container {
     display: flex;
@@ -272,32 +247,24 @@ main {
     gap: 3rem;
 }
 .sphere-button {
-    /* Tamanho da esfera */
     width: 220px;
     height: 220px;
-
-    /* Estilo visual */
-    background-color: #8b5cf6; /* Cor roxa do seu tema */
-    border-radius: 50%; /* A mágica para criar o círculo perfeito */
+    background-color: #8b5cf6;
+    border-radius: 50%;
     color: white;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    padding: 1rem; /* Espaçamento interno para o texto não colar nas bordas */
-    
-    /* Centralização perfeita do texto dentro da esfera */
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    
-    /* Efeito de transição suave */
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito ao passar o mouse */
 .sphere-button:hover {
-    background-color: #a78bfa; /* Cor fica mais clara */
-    transform: scale(1.05) translateY(-5px); /* Efeito de 'crescer' e 'levantar' */
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+    background-color: #a78bfa;
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
