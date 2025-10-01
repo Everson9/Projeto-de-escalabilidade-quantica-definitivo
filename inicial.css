@@ -85,7 +85,7 @@ main {
     font-size: clamp(2.5rem, 8vw, 4.3rem); 
     font-weight: bold;
     line-height: 0.6;
-    margin-bottom: 70px;
+    margin-bottom: 150px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -109,7 +109,7 @@ main {
    
     gap: 7rem; 
     
-    padding: 0 2rem 2rem 2rem;
+    padding: 6rem 2rem 15rem 2rem;
     width: 100%;
     max-width: 1600px; 
     margin: 0 auto;
@@ -206,7 +206,8 @@ main {
 }
 .video-section h2 {
     color: white;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-size: clamp(4rem, 3vw, 2.5rem);
+    font-weight: bold;
     margin-bottom: 2rem;
 }
 .video-responsive {
@@ -229,7 +230,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 6rem 2rem;
+    padding: 15rem 2rem;
     text-align: center;
 }
 .comparison-section h2 {
@@ -239,11 +240,22 @@ main {
 }
 
 .spheres-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 3rem;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem 5rem; 
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto;
+}
+
+
+.sphere-button:nth-child(3) {
+    justify-self: start;
+}
+
+
+.sphere-button:nth-child(4) {
+    justify-self: end;
 }
 .sphere-button {
     width: clamp(140px, 20vw, 220px);
