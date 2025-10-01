@@ -39,7 +39,6 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -82,6 +81,7 @@ main {
 }
 
 .main-title {
+    margin-top: 5rem;
     font-size: clamp(2.5rem, 8vw, 4.3rem); 
     font-weight: bold;
     line-height: 0.6;
@@ -198,7 +198,7 @@ main {
 }
 
 .video-section {
-   padding: 2rem 2rem 4rem 2rem; 
+   padding: 10rem 2rem 20rem 2rem; 
    text-align: center;
    width: 100%;
    max-width: 1000px;
@@ -209,6 +209,7 @@ main {
     font-size: clamp(4rem, 3vw, 2.5rem);
     font-weight: bold;
     margin-bottom: 2rem;
+    padding: 5px 3px 2px 1px; 
 }
 .video-responsive {
     position: relative;
@@ -227,45 +228,58 @@ main {
 }
 
 .comparison-section {
+    position: relative;
+    padding: 6rem 2rem 8rem 2rem;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15rem 2rem;
-    text-align: center;
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .comparison-section h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 4rem;
+    position: sticky;
+    top: 50%;
+    z-index: 1;
+
+    font-size: clamp(3rem, 10vw, 8rem);
     color: white;
+    text-align: center;
+    width: 100%;
+
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.comparison-section h2.is-visible {
+    opacity: 1;
+    transform: translateY(-50%);
 }
 
 .spheres-container {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 2rem 5rem; 
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 8rem;
     width: 100%;
-    max-width: 600px; 
-    margin: 0 auto;
+    max-width: 800px;
 }
 
-
-.sphere-button:nth-child(3) {
-    justify-self: start;
-}
-
-
-.sphere-button:nth-child(4) {
-    justify-self: end;
-}
 .sphere-button {
-    width: clamp(140px, 20vw, 220px);
-    height: clamp(140px, 20vw, 220px);
+    width: clamp(160px, 22vw, 250px);
+    height: clamp(160px, 22vw, 250px);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    
     background-color: #8b5cf6;
     border-radius: 50%;
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -280,8 +294,9 @@ main {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
 
+
 @media (max-width: 480px) {
     .spheres-container {
-        gap: 1.5rem;
+        gap: 2rem; /* Ajustado para um espaçamento consistente em celulares */
     }
 }
