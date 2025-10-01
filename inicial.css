@@ -229,7 +229,7 @@ main {
 
 .comparison-section {
     position: relative;
-    padding: 6rem 2rem 8rem 2rem;
+    padding: 6rem 2rem 40rem 2rem;
     width: 100%;
     
 
@@ -299,4 +299,14 @@ main {
     .spheres-container {
         gap: 2rem; /* Ajustado para um espaçamento consistente em celulares */
     }
+
+
+    .site-footer {
+    width: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+}
+
 }
