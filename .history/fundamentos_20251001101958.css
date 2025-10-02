@@ -1,0 +1,193 @@
+body {
+    background-color: #030105;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+}
+
+.fundamentos-matematicos {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Estilos dos Cards */
+.formula_1 {
+    width: 240px;
+    height: 380px;
+    background-color: #7703BA96;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 20px; /* Espaçamento entre os cards */
+    flex-shrink: 0; /* Impede que os cards encolham */
+}
+
+.formula_1 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.formula_1 img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.formula_1 p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+.button {
+    background-color: #030105C2;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    height: 60px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+
+
+.button:hover {
+    background-color: #ffffffc2;
+    color: #030105;
+}
+
+/* --- Novas Classes para o Carrossel --- */
+
+.carousel-wrapper {
+    position: relative; /* Necessário para posicionar as setas */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-container {
+    width: 80%; /* Ajuste a largura conforme necessário */
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.carousel-track {
+    display: flex;
+    /* Removemos a animação automática */
+    transition: transform 0.5s ease-in-out; /* Adiciona uma transição suave */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(3, 1, 5, 0.8);
+    color: white;
+    border: 1px solid #7703BA;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.carousel-btn:hover {
+    background-color: #7703BA;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#prev-btn {
+    left: 20px; /* Posição da seta esquerda */
+}
+
+#next-btn {
+    right: 20px; /* Posição da seta direita */
+}
+
+/* --- Estilos para os Indicadores (Pontos) --- */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #777;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator-dot.active {
+    background-color: #7703BA; /* Cor roxa para o ponto ativo */
+}
+
+/* --- Ajuste para a funcionalidade de arrastar --- */
+.carousel-track.grabbing {
+    cursor: grabbing; /* Muda o cursor enquanto o usuário arrasta */
+}
+
+.carousel-track.grabbing .formula_1 {
+    pointer-events: none; /* Impede que links/botões sejam clicados durante o arrasto */
+}
+
+/* --- Media Query para Responsividade --- */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 90%; /* Ocupa mais espaço em telas menores */
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #prev-btn {
+        left: 5px; /* Aproxima as setas das bordas */
+    }
+
+    #next-btn {
+        right: 5px;
+    }
+
+    .formula_1 {
+        /* Opcional: reduzir um pouco o tamanho dos cards em telas muito pequenas */
+        width: 220px;
+        height: 360px;
+    }
+}

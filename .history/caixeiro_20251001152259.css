@@ -1,0 +1,140 @@
+ body {
+            background-color: #030105;
+            font-family: 'Josefin Sans', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .voltar-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.voltar-button:hover {
+    background: linear-gradient(135deg, #c084fc 0%, #9333ea 100%);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+    transform: translateY(-2px);
+}
+
+.voltar-button:active {
+    transform: translateY(0);
+}
+
+.voltar-button::before {
+    content: "←";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;  
+            margin-bottom: 40px;
+            width: 80%;
+        }
+
+        .icon img {
+            width: 80px;
+            height: auto;
+        }
+
+        .text {
+            max-width: 600px;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .objetivo{
+            width: 820px;
+            height: 350px;
+            background-color: #7703BA96;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 0 auto;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .miniquadrado {
+            height: 40px;
+            width: 190px;
+            background: #772CA2B0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .miniquadrado p {
+            text-align: center;
+            font-size: 18px;
+            color: white;
+            line-height: 40px;
+        }
+
+        .card .text p {
+            line-height: 1.6;
+        }
+
+            .restricoes p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .restricoes .restricao {
+            margin-bottom: 15px;
+        }
+
+        .card .text p {
+            line-height: 1.6;
+        }
+
+        .page-transition-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #030105; 
+    z-index: 9999;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.page-transition-overlay.is-active {
+    opacity: 1;
+    pointer-events: all; 
+}

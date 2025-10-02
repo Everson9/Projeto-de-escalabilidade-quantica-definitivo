@@ -1,0 +1,108 @@
+body {
+    background-color: #030105;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+h1 {
+    text-align: center;
+    margin-bottom:15px;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.voltar-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.voltar-button:hover {
+    background: linear-gradient(135deg, #c084fc 0%, #9333ea 100%);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+    transform: translateY(-2px);
+}
+
+.voltar-button:active {
+    transform: translateY(0);
+}
+
+.voltar-button::before {
+    content: "←";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.objetivo {
+    width: 850px;
+    background-color: #4a1a6c; 
+    border-radius: 15px;
+    padding: 40px; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column; 
+}
+
+.conteudo .titulo-bloco {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.miniquadrado {
+    background: #772CA2B0;
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    display: inline-block; 
+}
+
+     .restricoes p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .restricoes .restricao {
+            margin-bottom: 15px;
+        }
+
+        .page-transition-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #030105; 
+    z-index: 9999;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.page-transition-overlay.is-active {
+    opacity: 1;
+    pointer-events: all; 
+}

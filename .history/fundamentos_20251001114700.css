@@ -1,0 +1,111 @@
+body {
+    background-color: #030105;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+}
+
+.fundamentos-matematicos {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Estilos dos Cards */
+.formula_1 {
+    width: 240px;
+    height: 380px;
+    background-color: #7703BA96;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 20px; /* Espaçamento entre os cards */
+    flex-shrink: 0; /* Impede que os cards encolham */
+}
+
+.formula_1 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.formula_1 img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.formula_1 p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+.button {
+    background-color: #030105C2;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    height: 60px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    text-decoration: dotted;
+}
+
+.button:hover {
+    background-color: #ffffffc2;
+    color: #030105;
+}
+
+/* --- Novas Classes para o Carrossel --- */
+
+.carousel-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Alinha a trilha no início */
+    overflow: hidden; /* Essencial para esconder o que está fora da tela */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.carousel-track {
+    display: flex; /* Coloca os cards em linha */
+    animation: scroll 40s linear infinite; /* Aplica a animação */
+}
+
+.carousel-container:hover .carousel-track {
+    animation-play-state: paused; /* Pausa a animação ao passar o mouse */
+}
+
+/* Animação de Rolagem */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move a trilha para a esquerda pelo tamanho exato da primeira metade dos cards */
+        /* (240px de largura + 40px de margem) * 4 cards = 1120px */
+        transform: translateX(calc(-280px * 4));
+    }
+}

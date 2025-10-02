@@ -4,20 +4,16 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Inter', sans-serif;
     color: white;
     min-height: 100vh;
-    
-    /* PONTO-CHAVE 1: A imagem de fundo */
-    background-image: url('imagens/WhatsApp\ Image\ 2025-09-18\ at\ 12.30.07\ 2.png');
-    background-size: cover; /* Garante que a imagem cubra toda a tela sem distorcer */
-    background-position: center center; /* Centraliza a imagem */
-    background-attachment: fixed; /* ESSENCIAL: Mantém a imagem fixa durante a rolagem */
+    background-image: url('imagens/WhatsApp Image 2025-09-18 at 12.30.07 2.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
-/* PONTO-CHAVE 2: O overlay escuro para legibilidade */
 body::before {
     content: '';
     position: fixed;
@@ -25,14 +21,13 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(18, 18, 18, 0.7); /* Camada escura semi-transparente */
-    z-index: -1; /* Coloca o overlay entre o fundo e o conteúdo */
+    background-color: rgba(18, 18, 18, 0.7);
+    z-index: -1;
 }
 
-/* O wrapper do conteúdo continua sendo importante */
 .content-wrapper {
     position: relative;
-    z-index: 1; /* Garante que o conteúdo fique na frente do overlay */
+    z-index: 1;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -44,9 +39,8 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    /* position e z-index removidos daqui */
+    width: 100%;
 }
 
 .header {
@@ -55,10 +49,8 @@ main {
     align-items: center;
     padding: 20px 40px;
     background: rgba(0, 0, 0, 0.034);
-    /* position e z-index removidos daqui */
 }
 
-/* ... (O resto do seu CSS da logo, título e cards permanece o mesmo) ... */
 .logo-animado {
     position: relative; 
     display: inline-flex;
@@ -89,10 +81,11 @@ main {
 }
 
 .main-title {
+    margin-top: 5rem;
     font-size: clamp(2.5rem, 8vw, 4.3rem); 
     font-weight: bold;
     line-height: 0.6;
-    margin-bottom: 70px;
+    margin-bottom: 150px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -109,19 +102,21 @@ main {
 }
 
 .info-boxes {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18rem; 
-    padding-bottom: 2rem;
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    
+   
+    gap: 7rem; 
+    
+    padding: 6rem 2rem 15rem 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1600px; 
     margin: 0 auto;
 }
 
 .box {
     position: relative;
-    flex: 1 1 300px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -130,19 +125,19 @@ main {
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .box:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 .box img {
     width: 100%;
-    aspect-ratio: 0 / 9 ; /* CORRIGIDO: formato retrato */
+    aspect-ratio: 3 / 4; 
     object-fit: cover;
     display: block;
     transition: filter 0.4s ease-in-out;
 }
 
-/* ... (Todo o resto do seu CSS dos cards e do vídeo do YouTube está correto e permanece aqui) ... */
 .card-overlay {
     position: absolute;
     top: 0;
@@ -195,12 +190,6 @@ main {
     background-color: #c4b5fd;
     transform: scale(1.05);
 }
-.card-content .arrow-icon {
-    margin-left: 8px;
-    font-size: 1.2rem;
-    line-height: 1;
-    color: white;
-}
 .box:hover img {
     filter: brightness(50%);
 }
@@ -209,7 +198,7 @@ main {
 }
 
 .video-section {
-   padding: 2rem 2rem 4rem 2rem; 
+   padding: 10rem 2rem 20rem 2rem; 
    text-align: center;
    width: 100%;
    max-width: 1000px;
@@ -217,8 +206,10 @@ main {
 }
 .video-section h2 {
     color: white;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-size: clamp(4rem, 3vw, 2.5rem);
+    font-weight: bold;
     margin-bottom: 2rem;
+    padding: 5px 3px 2px 1px; 
 }
 .video-responsive {
     position: relative;
@@ -234,4 +225,88 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.comparison-section {
+    position: relative;
+    padding: 6rem 2rem 40rem 2rem;
+    width: 100%;
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comparison-section h2 {
+    position: sticky;
+    top: 50%;
+    z-index: 1;
+
+    font-size: clamp(3rem, 10vw, 8rem);
+    color: white;
+    text-align: center;
+    width: 100%;
+
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.comparison-section h2.is-visible {
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.spheres-container {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 8rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.sphere-button {
+    width: clamp(160px, 22vw, 250px);
+    height: clamp(160px, 22vw, 250px);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    
+    background-color: #8b5cf6;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sphere-button:hover {
+    background-color: #a78bfa;
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (max-width: 480px) {
+    .spheres-container {
+        gap: 2rem; /* Ajustado para um espaçamento consistente em celulares */
+    }
+
+
+    .site-footer {
+    width: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+}
+
 }
