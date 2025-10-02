@@ -49,6 +49,7 @@ main {
     align-items: center;
     padding: 20px 40px;
     background: rgba(0, 0, 0, 0.034);
+    width: 100%;
 }
 
 .logo-animado {
@@ -85,7 +86,7 @@ main {
     font-size: clamp(2.5rem, 8vw, 4.3rem); 
     font-weight: bold;
     line-height: 0.6;
-    margin-bottom: 150px;
+    margin-bottom: 7.5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -103,13 +104,9 @@ main {
 
 .info-boxes {
     display: grid;
-    
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
-    
-   
-    gap: 7rem; 
-    
-    padding: 6rem 2rem 15rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 7rem;
+    padding: 6rem 2rem 10rem 2rem;
     width: 100%;
     max-width: 1600px; 
     margin: 0 auto;
@@ -125,7 +122,6 @@ main {
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .box:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -138,67 +134,15 @@ main {
     transition: filter 0.4s ease-in-out;
 }
 
-.card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(18, 18, 18, 0.85);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 1rem;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+.card-overlay, .overlay-text, .card-content, .card-content a, .card-content a:hover, .box:hover img, .box:hover .card-overlay {
+    /* O restante do seu CSS para os cards continua o mesmo */
+    /* ... */
 }
-.overlay-text {
-    text-align: center;
-    padding: 1rem 0;
-    color: white;
-}
-.overlay-text h3 {
-    margin-bottom: 0.8rem;
-    font-size: 1.6rem;
-    color: #a78bfa;
-}
-.overlay-text p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-.card-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0 1rem 1rem 1rem;
-}
-.card-content a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    background-color: #a78bfa;
-    padding: 0.7rem 1.5rem;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.card-content a:hover {
-    background-color: #c4b5fd;
-    transform: scale(1.05);
-}
-.box:hover img {
-    filter: brightness(50%);
-}
-.box:hover .card-overlay {
-    opacity: 1;
-}
+.card-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(18,18,18,0.85);display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:1rem;opacity:0;transition:opacity .4s ease-in-out}.overlay-text{text-align:center;padding:1rem 0;color:#fff}.overlay-text h3{margin-bottom:.8rem;font-size:1.6rem;color:#a78bfa}.overlay-text p{font-size:.95rem;line-height:1.6}.card-content{display:flex;justify-content:center;align-items:center;width:100%;padding:0 1rem 1rem}.card-content a{color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;background-color:#a78bfa;padding:.7rem 1.5rem;border-radius:25px;display:flex;align-items:center;transition:background-color .3s ease,transform .3s ease}.card-content a:hover{background-color:#c4b5fd;transform:scale(1.05)}.box:hover img{filter:brightness(50%)}.box:hover .card-overlay{opacity:1}
+
 
 .video-section {
-   padding: 10rem 2rem 20rem 2rem; 
+   padding: 10rem 2rem; 
    text-align: center;
    width: 100%;
    max-width: 1000px;
@@ -206,10 +150,9 @@ main {
 }
 .video-section h2 {
     color: white;
-    font-size: clamp(4rem, 3vw, 2.5rem);
+    font-size: clamp(2.5rem, 3vw, 4rem);
     font-weight: bold;
     margin-bottom: 2rem;
-    padding: 5px 3px 2px 1px; 
 }
 .video-responsive {
     position: relative;
@@ -227,9 +170,13 @@ main {
     height: 100%;
 }
 
+/* ======================================================= */
+/* SEÇÃO DE COMPARAÇÃO - COM RESPONSIVIDADE CORRIGIDA      */
+/* ======================================================= */
+
 .comparison-section {
     position: relative;
-    padding: 6rem 2rem 50rem 2rem;
+    padding: 6rem 0 8rem 0; /* Padding lateral removido para o container filho controlar */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -240,7 +187,7 @@ main {
     position: sticky;
     top: 50%;
     z-index: 1;
-    font-size: clamp(9rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     color: white;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -255,27 +202,22 @@ main {
     transform: translateY(-50%);
 }
 
-/* Container que segura os quadrados */
 .spheres-container {
     position: relative;
     z-index: 2;
     background-color: transparent;
-
-    
     display: flex;
     flex-direction: column;
-    gap: 20rem; 
-    
+    gap: 4rem; /* Espaçamento vertical ajustado */
     width: 100%;
-    max-width: 800px; 
+    max-width: 900px;
+    padding: 0 2rem; /* Adicionado padding para respiro nas laterais */
 }
 
-/* O botão em formato de quadrado */
 .sphere-button {
-    width: clamp(500px, 30vw, 300px); 
-    height: clamp(500px, 30vw, 300px);
-    font-size: clamp(2.5rem, 2.5vw, 1.2rem);
-    
+    width: clamp(280px, 40vw, 380px); /* Ajustado para melhor responsividade */
+    height: clamp(280px, 40vw, 380px);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     background-color: #8b5cf6;
     border-radius: 8px;
     color: white;
@@ -295,29 +237,106 @@ main {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Seleciona os itens ÍMPARES (1º e 3º) */
+
 .sphere-button:nth-child(odd) {
-    margin-right: auto; 
-    margin-left: -10rem;  
+    align-self: flex-start;
 }
 
-/* Seleciona os itens PARES (2º e 4º) */
 .sphere-button:nth-child(even) {
-    margin-left: auto;   
-    margin-right: -20rem;  
+    align-self: flex-end;
 }
 
-@media (max-width: 480px) {
-    .spheres-container {
-        gap: 2rem; 
-    }
+
 
 .site-footer {
-    width: 100%;
-       padding: 10rem 2rem 202rem 2rem;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: rgba(255, 255, 255, 0.5);
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 4rem 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+}
+.footer-section h3 {
+    color: #a78bfa;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+.footer-section p {
+    margin-bottom: 1rem;
+}
+.footer-section.links ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section.links ul li {
+    margin-bottom: 0.8rem;
+}
+.footer-section.links ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-section.links ul li a:hover {
+    color: #a78bfa;
+}
+.contact-info span {
+    display: block;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-info i {
+    margin-right: 0.8rem;
+    color: #a78bfa;
+    font-size: 1.1rem;
+}
+.social-links a {
+    color: #e0e0e0;
+    font-size: 1.8rem;
+    margin: 0 0.8rem;
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: #a78bfa;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        margin-bottom: 2rem;
+        max-width: 100%;
+    }
+    .contact-info span {
+        justify-content: center;
+    }
 }
