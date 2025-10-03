@@ -1,0 +1,134 @@
+body {
+    background-color: #030105;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+.voltar-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.voltar-button:hover {
+    background: linear-gradient(135deg, #c084fc 0%, #9333ea 100%);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+    transform: translateY(-2px);
+}
+
+.voltar-button:active {
+    transform: translateY(0);
+}
+
+.voltar-button::before {
+    content: "←";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+    h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .main-content {
+    display: flex;
+    gap: 40px; /* Espaçamento entre os dois containers */
+    margin-bottom: 40px; /* Espaçamento entre os containers e o rodapé */
+}
+
+.container {
+    width: 300px;
+    margin: 20px;
+    background-color: #4a1a6c; 
+    border-radius: 15px;
+    padding: 30px; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.h3zin{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.bloco-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px; /* Espaçamento entre o ícone e o conteúdo */
+}
+
+.icon img {
+    width: 30px; 
+    height: auto;
+    margin-top: 2px; 
+}
+
+.conteudo p {
+    margin: 0;
+    line-height: 1.4; /* Melhorar a legibilidade */
+}
+
+.conteudo .titulo-bloco {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.conteudo .descricao {
+    font-size: 0.9em;
+    color: #e0e0e0;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 1.1em;
+    max-width: 800px; /* Limita a largura do texto do rodapé */
+    line-height: 1.5;
+}
+
+
+.page-transition-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #030105; 
+    z-index: 9999;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Classe para ativar a transição (fade out) */
+.page-transition-overlay.is-active {
+    opacity: 1;
+    pointer-events: all; transição */
+}

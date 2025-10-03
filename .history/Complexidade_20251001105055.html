@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complexidade Computacional</title>
+    <link rel="stylesheet" href="complexidade.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Complexidade Computacional</h1>
+
+    <div class="main-content">
+        <div class="container">
+            <h3 class="h3zin">Algoritmos Clássicos</h3>
+
+            <div class="bloco-info">
+                <div class="icon">
+                    <img src="imgs_icones/CaixeiroViajante_icone2.png" alt="Engrenagem circular">
+                </div>
+                <div class="conteudo">
+                    <p class="titulo-bloco">TSP (força bruta ): O((n-1)!)</p>
+                    <p class="descricao">Teste todas as rotas possíveis</p>
+                </div>
+            </div>
+
+            <div class="bloco-info">
+                <div class="icon">
+                    <img src="imgs_icones/TSP (Held-Karp).png" alt="Quebra-cabeça">
+                </div>
+                <div class="conteudo">
+                    <p class="titulo-bloco">TSP (Held-KARP): O(n*2^n)</p>
+                    <p class="descricao">Uso de programação dinâmica, ainda caro, mas melhor que força bruta</p>
+                </div>
+            </div>
+
+            <div class="bloco-info">
+                <div class="icon">
+                    <img src="imgs_icones/QP.png" alt="Gráfico de barras">
+                </div>
+                <div class="conteudo">
+                    <p class="titulo-bloco">Portfólio (QP): O(n)<sup>3</sup></p>
+                    <p class="descricao">Problema de otimização em finanças</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3 class="h3zin">Algoritmos Quânticos</h3>
+
+            <div class="bloco-info">
+                <div class="icon">
+                    <img src="imgs_icones/QAOAO.png" alt="estrela estilizada">
+                </div>
+                <div class="conteudo">
+                    <p class="titulo-bloco">QAOA: O(poly(n))</p>
+                    <p class="descricao">algoritmo para otimização combinatória</p>
+                </div>
+            </div>
+
+            <div class="bloco-info">
+                <div class="icon">
+                    <img src="imgs_icones/VQE.png" alt="estrela estilizada(variação)">
+                </div>
+                <div class="conteudo">
+                    <p class="titulo-bloco">VQE: O(poly(n))</p>
+                    <p class="descricao">Encontra estados de minima energia (química/finanças)</p>
+                </div>
+            </div>
+
+            <div class="bloco-info">
+                <div class="icon">
+                    <img src="imgs_icones/Quantum.png" alt="estrela estilizada(variação2)">
+                </div>
+                <div class="conteudo">
+                    <p class="titulo-bloco">Quantum Annealing: O(poly(n))</p>
+                    <p class="descricao">Inspirado em processos físicos para buscar soluções ótimas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="footer-text">Enquanto algoritmos clássicos ficam inviáveis em larga escala, os quânticos buscam soluções mais eficientes e escaláveis.</p>
+</body>
+</html>

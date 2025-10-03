@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo QAOA para TSP</title>
+    <link rel="stylesheet" href="AlgoritmoQAOA.css">
+     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<h1>Algoritmo QAOA para TSP</h1>
+
+<!-- O container roxo que agrupa todo o conteúdo -->
+<div class="container">
+
+    <!-- BLOCO 1: Hamiltoniano de Custo -->
+    <div class="bloco-info">
+        <div class="icon">
+            <img src="imgs_icones/Raio.png" alt="Ícone de um raio">
+        </div>
+        <div class="conteudo">
+            <p class="titulo-bloco">Hamiltoniano de Custo:</p>
+            <div class="miniquadrado">
+                <p>H_C = Σ_(i,j) d_ij * (1 - z_i * z_j) / 2</p>
+            </div>
+            <p class="descricao">Onde z_i são operadores Pauli-Z aplicados aos qubits representando as cidades.</p>
+        </div>
+    </div>
+
+    <!-- BLOCO 2: Hamiltoniano Mixer -->
+    <div class="bloco-info">
+        <div class="icon">
+            <img src="imgs_icones/Play.png" alt="Ícone de um play">
+        </div>
+        <div class="conteudo">
+            <p class="titulo-bloco">Hamiltoniano Mixer:</p>
+            <div class="miniquadrado">
+                <p>H_M = Σ_i X_i</p>
+            </div>
+            <p class="descricao">Operadores Pauli-X que permitem transições entre estados quânticos.</p>
+        </div>
+    </div>
+
+    <!-- BLOCO 3: Estado Final QAOA -->
+    <div class="bloco-info">
+        <div class="icon">
+            <img src="imgs_icones/bolinha.png" alt="Ícone de um círculo">
+        </div>
+        <div class="conteudo">
+            <p class="titulo-bloco">Estado Final QAOA:</p>
+            <div class="formula-longa">
+                <!-- A fórmula está com chaves {} em vez de |⟩ para facilitar a escrita em HTML -->
+                <p>|ψ(β, γ)⟩ = e⁻ⁱᵝᴴᴹ e⁻ⁱᵞᴴᶜ |+⟩<sup>⊗n</sup></p>
+            </div>
+            <p class="descricao">Onde β e γ são parâmetros variacionais otimizados classicamente.</p>
+        </div>
+    </div>
+
+</div>
+
+</div> <script src="scripts.js"></script>
+    
+</body>
+</html>

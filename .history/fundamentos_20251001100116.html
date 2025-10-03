@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel com Setas</title>
+    <link rel="stylesheet" href="fundamentos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="fundamentos-matematicos">
+        <h1>Fundamentos Matemáticos</h1>
+        <p>Fórmulas e conceitos matemáticos por trás da computação quântica e otimização clássica</p>
+    </div>
+
+    <!-- Wrapper para o carrossel e as setas -->
+    <div class="carousel-wrapper">
+        <!-- Seta Esquerda -->
+        <div id="prev-btn" class="carousel-btn">&#9664;</div>
+
+        <!-- Container do Carrossel -->
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Cards Originais -->
+                <div class="formula_1">
+                    <img src="imgs_icones/CaixeiroViajante.png" alt="Ícone do Problema do Caixeiro Viajante">
+                    <h4>Problema do Caixeiro Viajante (TSP )</h4>
+                    <p>Encontrar a rota mais curta que passa por toda a cidade exatamente uma vez.</p>
+                    <button class="button">Ver Fórmula</button>
+                </div>
+                <div class="formula_1">
+                    <img src="imgs_icones/QAOA.png" alt="Ícone do Algoritmo QAOA">
+                    <h4>Algoritmo QAOA para TSP</h4>
+                    <p>Algoritmo quântico para otimização de rotas.</p>
+                    <button class="button">Ver Fórmula</button>
+                </div>
+                <div class="formula_1">
+                    <img src="" alt="Ícone de Otimização de Portfólio">
+                    <h4>Otimização de Portfólio</h4>
+                    <p>Distribuir investimentos para maximizar retornos.</p>
+                    <button class="button">Ver Fórmula</button>
+                </div>
+                <div class="formula_1">
+                    <img src="caminho/para/sua/imagem4.png" alt="Ícone de Complexidade Computacional">
+                    <h4>Complexidade Computacional</h4>
+                    <p>Resolver problemas que crescem com muitos elementos.</p>
+                    <button class="button">Ver Fórmula</button>
+                </div>
+
+                <!-- Cards Duplicados -->
+                <div class="formula_1">
+                    <img src="caminho/para/sua/imagem1.png" alt="Ícone do Problema do Caixeiro Viajante">
+                    <h4>Problema do Caixeiro Viajante (TSP)</h4>
+                    <p>Encontrar a rota mais curta que passa por toda a cidade exatamente uma vez.</p>
+                    <button class="button">Ver Fórmula</button>
+                </div>
+                <div class="formula_1">
+                    <img src="caminho/para/sua/imagem2.png" alt="Ícone do Algoritmo QAOA">
+                    <h4>Algoritmo QAOA para TSP</h4>
+                    <p>Algoritmo quântico para otimização de rotas.</p>
+                    <button class="button">Ver Fórmula</button>
+                </div>
+                <div class="formula_1">
+                    <img src="caminho/para/sua/imagem3.png" alt="Ícone de Otimização de Portfólio">
+                    <h4>Otimização de Portfólio</h4>
+                    <p>Distribuir investimentos para maximizar retornos.</p>
+                    <button class="button">Ver Fórmula</button>
+                </div>
+                <div class="formula_1">
+                    <img src="caminho/para/sua/imagem4.png" alt="Ícone de Complexidade Computacional">
+                    <h4>Complexidade Computacional</h4>
+                    <p>Resolver problemas que crescem com muitos elementos.</p>
+                    <button class="button">Ver Fórmula</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seta Direita -->
+        <div id="next-btn" class="carousel-btn">&#9654;</div>
+    </div>
+
+    <!-- Adicionando o arquivo JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
