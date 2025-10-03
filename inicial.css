@@ -8,7 +8,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: white;
     min-height: 100vh;
-    background-image: url('imagens/WhatsApp Image 2025-09-18 at 12.30.07 2.png');
+    background-image: url('imagens/image\ 66.png');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -170,14 +170,10 @@ main {
     height: 100%;
 }
 
-/* ======================================================= */
-/* SEÇÃO DE COMPARAÇÃO - COM RESPONSIVIDADE CORRIGIDA      */
-/* ======================================================= */
 
 .comparison-section {
     position: relative;
-    padding: 6rem 0 8rem 0; /* Padding lateral removido para o container filho controlar */
-    width: 100%;
+    padding: 6rem 0 8rem 0; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -208,14 +204,14 @@ main {
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    gap: 4rem; /* Espaçamento vertical ajustado */
+    gap: 4rem; 
     width: 100%;
     max-width: 900px;
-    padding: 0 2rem; /* Adicionado padding para respiro nas laterais */
+    padding: 0 2rem; 
 }
 
 .sphere-button {
-    width: clamp(280px, 40vw, 380px); /* Ajustado para melhor responsividade */
+    width: clamp(280px, 40vw, 380px); 
     height: clamp(280px, 40vw, 380px);
     font-size: clamp(1.1rem, 3vw, 1.5rem);
     background-color: #8b5cf6;
