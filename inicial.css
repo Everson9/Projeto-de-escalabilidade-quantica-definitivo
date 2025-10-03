@@ -37,7 +37,9 @@ body::before {
     flex-direction: column;
     min-height: 100vh;
     background-color: transparent;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
+
 
 main {
     flex-grow: 1;
@@ -303,7 +305,10 @@ main {
     align-self: flex-end;
 }
 
-
+.page-exit-animation .content-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+}
 
 
 @media (max-width: 600px) { 

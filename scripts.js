@@ -60,3 +60,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
+// =======================================================
+// SCRIPT PARA ANIMAÇÃO DE SAÍDA DE PÁGINA
+// =======================================================
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    // Seleciona todos os links que devem ter a animação
+    const animatedLinks = document.querySelectorAll('.animated-link');
+
+    animatedLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Pega a URL para onde o link aponta
+            const destinationUrl = link.href;
+
+            // 1. Previne a navegação imediata
+            e.preventDefault();
+
+            // 2. Adiciona a classe que inicia a animação de saída no CSS
+            document.body.classList.add('page-exit-animation');
+
+            // 3. Espera a animação terminar (500ms) e então navega para a nova página
+            setTimeout(() => {
+                window.location.href = destinationUrl;
+            }, 500); // Este tempo (500ms) deve ser igual ao da transição no CSS
+        });
+    });
+    
+});
