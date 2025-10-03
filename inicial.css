@@ -89,25 +89,29 @@ main {
 
 .main-title {
     margin-top: 5rem;
-    font-size: clamp(2.5rem, 8vw, 4.3rem); 
+    font-size: clamp(4rem, 8vw, 4.5rem); /* Ajustado para melhor visualização */
     font-weight: bold;
-    line-height: 0.6;
+    line-height: 0.7;
     margin-bottom: 7.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     width: 90%;
     max-width: 1200px;
-}
-.main-title .line-2 {
-    margin-left: clamp(3rem, 10vw, 150px);
-    white-space: nowrap;
-}
-.main-title .line-3 {
-    margin-left: clamp(5rem, 20vw, 300px);
-    white-space: nowrap;
+    
+ 
+    display: flex;
+    flex-direction: column; /* Coloca os spans um embaixo do outro */
 }
 
+.main-title .line-1 {
+    
+    white-space: nowrap; /* Evita que a linha quebre em telas menores */
+}
+
+.main-title .line-2 {
+   
+    align-self: flex-end; 
+    white-space: nowrap; 
+    
+}
 .info-boxes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
