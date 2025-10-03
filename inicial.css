@@ -134,11 +134,65 @@ main {
     transition: filter 0.4s ease-in-out;
 }
 
-.card-overlay, .overlay-text, .card-content, .card-content a, .card-content a:hover, .box:hover img, .box:hover .card-overlay {
-    /* O restante do seu CSS para os cards continua o mesmo */
-    /* ... */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
-.card-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(18,18,18,0.85);display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:1rem;opacity:0;transition:opacity .4s ease-in-out}.overlay-text{text-align:center;padding:1rem 0;color:#fff}.overlay-text h3{margin-bottom:.8rem;font-size:1.6rem;color:#a78bfa}.overlay-text p{font-size:.95rem;line-height:1.6}.card-content{display:flex;justify-content:center;align-items:center;width:100%;padding:0 1rem 1rem}.card-content a{color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;background-color:#a78bfa;padding:.7rem 1.5rem;border-radius:25px;display:flex;align-items:center;transition:background-color .3s ease,transform .3s ease}.card-content a:hover{background-color:#c4b5fd;transform:scale(1.05)}.box:hover img{filter:brightness(50%)}.box:hover .card-overlay{opacity:1}
+.overlay-text {
+    text-align: center;
+    padding: 1rem 0;
+    color: white;
+}
+.overlay-text h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+    color: #a78bfa;
+}
+.overlay-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+}
+.card-content a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: #a78bfa;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.card-content a:hover {
+    background-color: #c4b5fd;
+    transform: scale(1.05);
+}
+.box:hover img {
+    filter: brightness(50%);
+}
+.box:hover .card-overlay {
+    opacity: 1;
+}
+
 
 
 .video-section {
@@ -173,7 +227,8 @@ main {
 
 .comparison-section {
     position: relative;
-    padding: 6rem 0 8rem 0; 
+    padding: 6rem 2rem 25rem 2rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -198,21 +253,23 @@ main {
     transform: translateY(-50%);
 }
 
+
 .spheres-container {
     position: relative;
     z-index: 2;
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    gap: 4rem; 
+    gap: 20rem;
     width: 100%;
     max-width: 900px;
-    padding: 0 2rem; 
+    padding: 0 2rem;
 }
 
+
 .sphere-button {
-    width: clamp(280px, 40vw, 380px); 
-    height: clamp(280px, 40vw, 380px);
+    width: clamp(240px, 30vw, 380px);
+    height: clamp(240px, 30vw, 380px);
     font-size: clamp(1.1rem, 3vw, 1.5rem);
     background-color: #8b5cf6;
     border-radius: 8px;
@@ -242,6 +299,23 @@ main {
     align-self: flex-end;
 }
 
+
+
+
+@media (max-width: 600px) { 
+    .spheres-container {
+        max-width: 100%;
+        padding: 0 2rem;
+        gap: 2rem;
+    }
+
+    
+    .sphere-button:nth-child(odd),
+    .sphere-button:nth-child(even) {
+        align-self: center; 
+        margin: 0;
+    }
+}
 
 
 .site-footer {
@@ -322,17 +396,3 @@ main {
     margin-top: 3rem;
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .footer-section {
-        margin-bottom: 2rem;
-        max-width: 100%;
-    }
-    .contact-info span {
-        justify-content: center;
-    }
-}
